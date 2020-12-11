@@ -13,18 +13,22 @@ def getEndSet(seats, lines, seatsPerLine, SeatsInSight, groupSize):
         count = 0
 
         if SeatsInSight:
-            neightBours = [
-                getNeightBours(x, y, -1, -1, checkseats),
-                getNeightBours(x, y, 0, -1, checkseats),
-                getNeightBours(x, y, 1, -1, checkseats),
-                getNeightBours(x, y, -1, 0, checkseats),
-                getNeightBours(x, y, 1, 0, checkseats),
-                getNeightBours(x, y, -1, 1, checkseats),
-                getNeightBours(x, y, 0, 1, checkseats),
-                getNeightBours(x, y, 1, 1, checkseats),
-            ]
-
-            count = neightBours.count('#')
+            if getNeightBours(x, y, -1, -1, checkseats) == '#':
+                count += 1
+            if getNeightBours(x, y, 0, -1, checkseats) == '#':
+                count += 1
+            if getNeightBours(x, y, 1, -1, checkseats) == '#':
+                count += 1
+            if getNeightBours(x, y, -1, 0, checkseats) == '#':
+                count += 1
+            if getNeightBours(x, y, 1, 0, checkseats) ==  '#':
+                count += 1
+            if getNeightBours(x, y, -1, 1, checkseats) == '#':
+                count += 1
+            if getNeightBours(x, y, 0, 1, checkseats) == '#':
+                count += 1
+            if getNeightBours(x, y, 1, 1, checkseats) == '#':
+                count += 1
         else:
             if checkseats.get((x-1, y-1), '.') == '#':
                 count += 1
