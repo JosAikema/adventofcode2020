@@ -1,4 +1,4 @@
-f = open("Day1/expenses_report.txt", "r")
+f = open("day1/expenses_report.txt", "r")
 foundWithTwo = False
 foundWithThree = False
 content = f.readlines()
